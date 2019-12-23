@@ -54,7 +54,7 @@ def makeCER(o_host='192.0.2.11', o_realm='example.com', prod_name='AiDiameter'):
             vendorID, productName, authAppId]
     for avp in avps:
         message.addNewAVP(avp)
-    return message
+    return message.encode()
 
 
 def makeCEA(o_host='192.0.2.11', o_realm='example.com', prod_name='AiDiameter'):
