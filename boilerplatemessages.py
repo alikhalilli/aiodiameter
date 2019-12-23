@@ -34,7 +34,7 @@ def makeDWA(resultCode=2001, o_host='192.0.2.11', o_realm='example.com'):
                      data=Unsigned32(resultCode))
     originHost = AVP(code=264, flags=0x40, data=DiameterIdentity(o_host))
     originRealm = AVP(code=296, flags=0x40, data=DiameterIdentity(o_realm))
-    avps = [originHost, originRealm]
+    avps = [resultCode, originHost, originRealm]
     for avp in avps:
         m.addNewAVP(avp)
     return m.encode()
